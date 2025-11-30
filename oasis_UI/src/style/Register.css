@@ -1,0 +1,163 @@
+/* Existing styles - unchanged */
+body {
+  background-color: rgb(181, 213, 181);
+  padding: 0px;
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: visible;
+  overflow: auto; 
+}
+
+.page-container {
+  background-color: white;
+  border-radius: 30px;
+  padding: 100px 120px;
+  width: 95vw;
+  height: 90vh;
+  margin: 0 auto;
+  margin-left: -90px;
+  margin-right: -60px;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+h1 {
+  color: rgb(89, 85, 85);
+  padding-right: 100px;
+}
+
+input {
+  background-color: white;
+  color: black;
+  height: 35px;
+  width: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: none;
+}
+
+button {
+  background-color: rgb(70, 166, 70);
+  width: 410px;
+}
+
+p {
+  color: black;
+  padding-right: 80px;
+}
+
+a {
+  color: rgb(70, 166, 70);
+}
+
+.register-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-section {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 100px;
+}
+
+.image-section {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  padding-left: 80px;
+  padding-right: 130px;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* ---------------------- */
+/* ✅ Responsive Media Queries */
+/* ---------------------- */
+
+/* Medium devices (tablets) */
+@media (max-width: 1024px) {
+  .page-container {
+    padding: 60px;
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .form-section {
+    padding-left: 40px;
+  }
+
+  input, button {
+    width: 100%;
+  }
+
+  h1 {
+    padding-right: 0;
+  }
+
+  p {
+    padding-right: 0;
+  }
+
+  .image-section {
+    padding: 0 50px;
+  }
+}
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column; 
+    align-items: center;
+    gap: 30px;
+  }
+
+  .form-section,
+  .image-section {
+    max-width: 100%;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-container {
+    padding: 30px 20px;
+    height: auto;
+  }
+
+  input, button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .image-section img {
+    width: 80%;
+  }
+}
+
+
+
+

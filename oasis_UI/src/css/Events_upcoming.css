@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Font Settings */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  /* background-color: aquamarine; */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.Events_upcoming_main_container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  margin-top: 80px;  /* how much the topbar takes up  */
+}
+
+.Events_upcoming_banner_container img{
+  width: 100%;
+  height:  140px;
+  object-fit: cover;
+  display: block;
+}
+
+
+.Events_upcoming_banner_container h1 {
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  /* transform: translate(-50%, -50%); */
+  color: white;
+  font-size: 44px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.Events_upcoming_content {
+  display: flex;             /* makes children sit side-by-side */
+  flex-direction: row;       /* default, but mentioned for clarity */
+  justify-content: center;   /* horizontally center the whole layout */
+  align-items: flex-start;   /* align children at the top */
+  gap: 5px;                 /* space between columns */
+  padding: 20px;
+  max-width: 1300px;    
+  height: auto;     /* set a reasonable width */
+  margin: 0 auto;            /* center the container itself */
+}
+
+
+.filter-mobile{
+  display: none;
+}
+
+
+.Events_upcoming_filter_container {
+  display: flex;
+  flex-direction: column;             
+  /* background-color: #c94f4f; */
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 200px;              /* optional: ensures it's not too narrow */
+  /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); */
+}
+
+.filter-desktop{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: none;
+  width: 240px;
+}
+
+.filter-desktop h4{
+  color: #1A2028;
+}
+
+.filter-desktop .active{
+  background-color: #689F38;
+  font-weight: 400;
+  color: white;
+  height: 40px;
+  padding-right: 90px;
+}
+
+.filter-desktop button{
+  background-color: #F0F5EB;
+  color: #000000;
+  font-weight: 400;
+  height: 40px;
+  padding-right: 90px;
+}
+
+.Events_upcoming_body_container_cards {
+  flex: 2;                       /* takes up more width */
+  /* background-color: #e20f0f; */
+  border-radius: 8px;
+  padding: 20px;
+  /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); */
+  
+}
+
+
+.Events_upcoming_first_four_cards{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;  
+  /* background-color: #1A2028; */
+}
+
+
+.event-card {
+  display: flex;
+  flex-direction: row;    
+  align-items: center;
+  width: 100%;  
+  height: 120px;          
+  gap: 20px;              
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  /* margin: 10px; */
+} 
+
+.event-info{
+  display: flex;
+  flex-direction: column;
+  
+
+}
+.event-info h4{
+  font-size: 18px;
+  font-weight: 500;
+  color: #120D26;
+  padding-bottom: 8px;
+}
+
+.event-info p{
+  font-size: 13px;
+  color: #6B7280;
+  font-weight: 400;
+  /* padding-top: 5px; */
+  
+}
+
+.event-info p:first-of-type {
+  font-size: 16px; /* or adjust as needed */
+  font-weight: 400;
+  padding-bottom: 8px;
+}
+
+/* Second and third <p> tags (Start Date and End Date) */
+.event-info p:nth-of-type(2),
+.event-info p:nth-of-type(3) {
+  color: #689F38;
+  font-weight: 500;
+}
+
+/* Style only the value inside <span> */
+.event-info p:nth-of-type(2) span,
+.event-info p:nth-of-type(3) span {
+  background-color: #F0F5EB;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+
+.event-card img{
+  width: 20%;
+  height: 110px;
+  border-radius: 10px;
+}
+
+.Events_upcoming_first_four_cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 columns of equal width */
+  gap: 30px;   
+  /* margin: 10px;                            */
+}
+
+.Booked_container h3{
+  color:#4A4A4A;
+  
+}
+
+.booked-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 columns of equal width */
+  gap: 30px;  
+  background-color: #F0F5EB;  
+  padding: 10px;                        
+}
+
+.Booked_container{
+  margin-top: 50px; 
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1150px)  {
+.event-info{
+  display: flex;
+  flex-direction: column;
+}
+.event-info h4{
+  font-size: 15px;
+}
+
+.event-info p:first-of-type {
+  font-size: 11px; /* or adjust as needed */
+}
+
+/* Second and third <p> tags (Start Date and End Date) */
+.event-info p:nth-of-type(2),
+.event-info p:nth-of-type(3) {
+  
+  font-size: 11px;
+}
+.event-card img{
+  width: 18%;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.filter-desktop .active{
+  font-weight: 300;
+}
+
+.filter-desktop button{
+  font-weight: 300;
+}
+.filter-desktop{
+  width: 200px;
+}
+
+}
+
+@media screen and (min-width:760px ) and (max-width: 1000px)  {
+.event-info{
+  display: flex;
+  flex-direction: column;
+}
+.event-info h4{
+  font-size: 18px;
+}
+
+.event-info p:first-of-type {
+  font-size: 13px; /* or adjust as needed */
+}
+
+/* Second and third <p> tags (Start Date and End Date) */
+.event-info p:nth-of-type(2),
+.event-info p:nth-of-type(3) {
+  
+  font-size: 13px;
+}
+.event-card img{
+  width: 20%;
+  height: 110px;
+  border-radius: 10px;
+}
+
+.filter-desktop .active{
+  font-weight: 300;
+}
+
+.filter-desktop button{
+  font-weight: 300;
+}
+.filter-desktop{
+  width: 200px;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: row;    
+  align-items: center;
+  width: 100%;  
+  height: 120px;          
+  gap: 20px;              
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  /* margin: 10px; */
+} 
+
+.Events_upcoming_first_four_cards {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;                          
+}
+
+.Booked_container h3{
+  color:#4A4A4A;
+  
+}
+
+.booked-grid{
+  
+  display: flex;
+  flex-direction: column;                      
+}
+
+}
+
+
+@media screen and (min-width:516px ) and (max-width: 760px)  {
+
+  .Events_upcoming_body_container_cards{
+    /* background-color: darkmagenta; */
+    width: 100%;
+  }
+.event-info{
+  display: flex;
+  flex-direction: column;
+}
+.event-info h4{
+  font-size: 18px;
+}
+
+.event-info p:first-of-type {
+  font-size: 13px; 
+}
+
+/* Second and third <p> tags (Start Date and End Date) */ 
+.event-info p:nth-of-type(2),
+.event-info p:nth-of-type(3) {
+  font-size: 13px;
+}
+.event-card img{
+  width: 20%;
+  height: 110px;
+  border-radius: 10px;
+}
+
+.Events_upcoming_filter_container{
+  width: 100%;
+  
+}
+
+.filter-desktop .active{
+  font-weight: 300;
+}
+
+.filter-desktop button{
+  font-weight: 300;
+}
+.filter-desktop{
+  width: 200px;
+}
+
+
+.event-card {
+  display: flex;
+  flex-direction: row;    
+  align-items: center;
+  width: 100%;   /* Increase this value as needed */
+  max-width: 100%;
+  height: 120px;          
+  gap: 20px;              
+  padding: 10px;
+  border-radius: 8px;
+  /* background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); */
+}
+
+
+ 
+
+  .filter-desktop{
+    display: none;
+  }
+  .filter-mobile {
+    display: block;
+    width: 100%;
+    /* background-color: #d1460a; */
+  }
+
+  /* ...existing code... */
+.filter-mobile select {
+  background-color: #689F38; /* Change this color as needed */
+  color: #222;              /* Optional: text color */
+  border-radius: 6px;       /* Optional: rounded corners */
+  border: 1px solid #b2ebf2;/* Optional: border color */
+  padding: 8px 12px;        /* Optional: padding */
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  /* margin-right: 150px; */
+  
+}
+
+
+  .Events_upcoming_content{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    
+  }
+
+.event-info h4{
+  font-size: 15px;
+}
+
+.event-info p:first-of-type {
+  font-size: 10px; /* or adjust as needed */
+}
+
+/* Second and third <p> tags (Start Date and End Date) */
+.event-info p:nth-of-type(2),
+.event-info p:nth-of-type(3) {
+  
+  font-size: 10px;
+}
+
+  .Events_upcoming_first_four_cards{
+    /* background-color: blue; */
+    display: grid;
+    grid-template-columns: 1fr; 
+    justify-items: center;
+    width: 100%;
+    /* margin-right:30px; */
+  }
+
+  .Booked_container{
+   /* background-color: #4314c4;  */
+}
+ 
+  .booked-grid {
+    /* background-color: #000000; */
+  display: grid;
+  grid-template-columns: 1fr; 
+  width: 100%;
+  justify-items: center;
+  }
+
+   .Events_upcoming_filter_container{
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* background-color: yellow; */
+  }
+}
+
+
+
+
+
+@media screen and (min-width:408px ) and (max-width: 516px)  {
+
+  .Events_upcoming_banner_container h1 {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .Events_upcoming_filter_container{
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* background-color: yellow; */
+  }
+
+  .filter-mobile select {
+  background-color: #689F38; /* Change this color as needed */
+  color: #222;              /* Optional: text color */
+  border-radius: 6px;       /* Optional: rounded corners */
+  border: 1px solid #b2ebf2;/* Optional: border color */
+  padding: 8px 12px;        /* Optional: padding */
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  /* margin-right: 150px; */
+  
+  
+}
+
+  .filter-desktop{
+    display: none;
+  }
+
+  .filter-mobile {
+    display: block;
+    /* background-color: #689F38; */
+    width: 100%;
+  }
+
+  .Events_upcoming_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-card {
+  width: 100%;  
+  height: 120px;          
+} 
+
+.event-info h4{
+  font-size: 15px;
+}
+
+.event-info p:first-of-type {
+  font-size: 10px; /* or adjust as needed */
+}
+
+/* Second and third <p> tags (Start Date and End Date) */
+.event-info p:nth-of-type(2),
+.event-info p:nth-of-type(3) {
+  
+  font-size: 10px;
+}
+
+.Events_upcoming_body_container_cards{
+  /* background-color: darkorange; */
+  width: 100%;
+}
+
+  .Events_upcoming_first_four_cards{
+    /* background-color: blue; */
+    display: grid;
+    grid-template-columns: 1fr; 
+    justify-items: center;
+    width: 100%;
+    /* margin-right:30px; */
+  }
+ 
+  .booked-grid {
+    /* background-color: #000000; */
+  display: grid;
+  grid-template-columns: 1fr; 
+  width: 100%;
+  justify-items: center;
+  }
+
+  
+
+}
+
+
+@media screen and (min-width:300px ) and (max-width: 408px)  {
+
+  .Events_upcoming_banner_container h1 {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .Events_upcoming_filter_container{
+    width: 80%;
+    /* background-color: darkblue; */
+  }
+  .Events_upcoming_body_container_cards{
+    padding: 0;
+  }
+
+  .Events_upcoming_first_four_cards{
+    padding: 0;
+  }
+  
+  .filter-mobile select {
+  background-color: #689F38; /* Change this color as needed */
+  color: #222;              /* Optional: text color */
+  border-radius: 6px;       /* Optional: rounded corners */
+  border: 1px solid #b2ebf2;/* Optional: border color */
+  /* padding: 8px 12px;         */
+  width: 80%;
+  /* margin-right: 150px; */
+  display: block;
+    margin: 0 auto;
+    height: 30px;
+}
+
+  .filter-desktop{
+    display: none;
+  }
+  .filter-mobile {
+    display: block;
+    margin: 0 auto;
+
+    /* background-color: #689F38; */
+    width: 100%;
+  }
+
+  .Events_upcoming_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-card {
+  width: 100%;  
+  height: 120px;          
+} 
+
+.event-info h4{
+  font-size: 13px;
+}
+
+.event-info p:first-of-type {
+  font-size: 9px; /* or adjust as needed */
+}
+
+/* Second and third <p> tags (Start Date and End Date) */
+.event-info p:nth-of-type(2),
+.event-info p:nth-of-type(3) {
+  
+  font-size: 9px;
+}
+
+.Events_upcoming_body_container_cards{
+  /* background-color: darkorange; */
+  width: 100%;
+}
+
+  .Events_upcoming_first_four_cards{
+    /* background-color: blue; */
+    display: grid;
+    grid-template-columns: 1fr; 
+    justify-items: center;
+    width: 100%;
+    /* margin-right:30px; */
+  }
+ 
+  .booked-grid {
+    /* background-color: #000000; */
+  display: grid;
+  grid-template-columns: 1fr; 
+  width: 100%;
+  justify-items: center;
+  }
+
+   .Events_upcoming_filter_container{
+    width: 100%;
+    padding-top: 0;
+    /* padding-bottom: 0; */
+    /* background-color: yellow; */
+  }
+
+}

@@ -1,0 +1,74 @@
+.wallet-bank-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px 16px;
+  width: 80%;
+  margin: 20px auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-bank-left {
+  flex: 0 0 auto;
+}
+
+.wallet-bank-right {
+  flex: 1;
+  text-align: right;
+}
+
+.wallet-bank-icon {
+  width: 80%;
+ padding-top: 30%;
+  border-radius: 8px;
+  padding-left: 5%;
+}
+
+.wallet-bank-text {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+.wallet-bank-option {
+  width: 15vw;
+  height: 13vh;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-bank-top {
+  position: relative;
+}
+
+.wallet-bank-image {
+  width: 10%;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.wallet-bank-tick {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 10px;
+}
+
+.wallet-bank-label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}

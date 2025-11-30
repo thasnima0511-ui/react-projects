@@ -1,0 +1,20 @@
+.edit-mode .Profile-profile-details-box input {
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 4px;
+}
+
+.edit-mode .Profile-edit-button {
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.edit-mode .Profile-profile-image-container button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
