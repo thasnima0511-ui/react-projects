@@ -1,0 +1,729 @@
+
+/* src/pages/Dashboard.css */
+
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #141E30, #243B55);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  /* padding:20px 10px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffffdd;
+    flex: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dashboard h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #8a3197, #d997cc); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* Table container */
+.student-table {
+  background: rgba(30, 30, 60, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  padding: 10px 24px;
+  padding-right:40px;
+  padding-left: 40px;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.3);
+  width: 100%;
+  max-width: 1000px;
+  overflow-x: none;
+   margin-left: 50px; 
+  margin-right: 50px;}
+
+.student-table table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.student-table th,
+.student-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.student-table th {
+  font-weight: 600;
+  color: #c7bfff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.student-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.pass, .fail {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.pass {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.fail {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+/* Delete button */
+.student-table button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  background: linear-gradient(to right, #f43f5e, #ec4899);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.student-table button:hover {
+  background: linear-gradient(to right, #e11d48, #db2777);
+  transform: scale(1.05);
+}
+
+/* Logout button */
+.dashboard > button {
+  margin-top: 3rem;
+  padding: 0.1rem 1rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(to right, #a855f7, #7c3aed);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
+}
+
+.dashboard > button:hover {
+  background: linear-gradient(135deg, #d776de, #00f2fe);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 242, 254, 0.4);
+}
+/* DELETE ICON - Glassy Neon Trash Icon */
+.trash-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(4px);
+  color:  #f0e9f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.2);
+}
+
+.trash-icon:hover {
+  transform: scale(1.15);
+  background: linear-gradient(145deg, #cf78d6, #f97316);
+  color: #9333ea;
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.5);
+}
+
+/* MODAL OVERLAY - Frosted Background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 40, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* MODAL BOX - Glassmorphism + Gradient Border */
+.modal {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.25);
+  color: #ffffffee;
+  max-width: 420px;
+  width: 90%;
+  backdrop-filter: blur(16px);
+  position: relative;
+  animation: modalScale 0.4s ease;
+}
+
+/* HEADINGS */
+.modal h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #a855f7, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.modal p {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+/* BUTTON CONTAINER */
+.modal-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center; /* Aligns buttons together */
+  gap: 2rem;             /* Smaller, controlled spacing */
+}
+/* CONFIRM BUTTON */
+.modal-buttons .confirm {
+  background: linear-gradient(135deg, #8a3197, #d997cc);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 18px rgba(239, 68, 68, 0.3);
+}
+
+.modal-buttons .confirm:hover {
+  background: linear-gradient(135deg, #dc2626, #f43f5e);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(239, 68, 68, 0.5);
+}
+
+/* CANCEL BUTTON */
+.modal-buttons .cancel {
+  background: transparent;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal-buttons .cancel:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScale {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.pass, .fail {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.student-table th,
+.student-table td {
+  text-align: center;     /* Center horizontally */
+  vertical-align: middle; /* Center vertically */
+    font-family: 'Courier New', Courier, monospace;
+
+}
+.student-table td:nth-child(4),
+.student-table td:nth-child(5),
+.student-table td:nth-child(6),
+.student-table td:nth-child(7) {
+  font-family: 'Courier New', Courier, monospace;
+}
+.student-table td:nth-child(1),
+.student-table th:nth-child(1) {
+  white-space: nowrap;
+}
+
+
+.dashboard > button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(to right, #7c3aed, #a855f7);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dashboard > button:hover {
+  background: linear-gradient(to right, #9333ea, #6d28d9);
+  transform: translateY(-2px);
+}
+.edit-icon {
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-right: 12px;
+  transition: transform 0.2s ease;
+}
+
+.edit-icon:hover {
+  color: #2563eb;
+  transform: scale(1.2);
+}
+.action-buttons {
+  display: flex;
+  gap: 0.6rem; /* controls space between buttons */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Reuse your styled icon button */
+/* .delete-icon {
+  background: linear-gradient(135deg, #8a3197, #d997cc);
+  color: white;
+  font-size: 20px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* .delete-icon:hover {
+  background: linear-gradient(to right, #a855f7, #7c3aed);  
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+} */
+
+
+
+
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+
+
+/* Sidebar styling */
+.sidebar {
+  width:160px;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(135deg, #8a3197, #d997cc);
+/* background: linear-gradient(to bottom, #4b1248, #2c003e); Choice 2*/
+  /* background: linear-gradient(to bottom, #3f3cbb, #7f5af0);  */
+
+  /* background: linear-gradient(to bottom, #1e1e2f, #3a1c71); choice 1 Darker*/ 
+box-shadow: 2px 0 10px rgba(23, 22, 22, 0.3);
+  background: linear-gradient(135deg,#c471ed, #1f1c21);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100vh; */
+  
+  /* background: linear-gradient(135deg, #c471ed, #f64f59); */
+  /* background: radial-gradient(circle at top left, #c471ed, #c471ed); */
+/* background: radial-gradient(circle at top left, #c471ed, #665f6a); */
+/* background: radial-gradient(circle at top left, #c471ed, #605e5e); */
+
+  
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+    text-align: center; 
+  display: flex;      
+  justify-content: center;  
+  align-items: center;      
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar ul li.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.logout-box {
+  margin-top: auto;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  color: #f5f5f5;
+}
+
+.logout-box:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+.dashboard-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(48, 48, 75, 0.65);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.3);
+}
+
+.filter-search {
+  background: rgba(25, 25, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  color: white;
+  outline: none;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  transition: all 0.3s ease;
+}
+
+.filter-search:focus {
+  border-color: #c084fc;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+.filter-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.sort-dropdown {
+  background: rgba(25, 25, 50, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: white;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+  transition: all 0.3s ease;
+}
+
+.sort-dropdown:focus {
+  border-color: #c084fc;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+/* Dashboard.css
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background: #34495e;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 15px;
+  margin: 8px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.logout-box {
+  margin-top: auto;
+  padding: 10px 15px;
+  background: #e74c3c;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.logout-box:hover {
+  background: #c0392b;
+}
+
+.dashboard {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.add-icon {
+  font-size: 30px;
+  color: #27ae60;
+  float: right;
+  margin-top: -10px;
+  transition: transform 0.2s;
+}
+
+.add-icon:hover {
+  transform: scale(1.1);
+  color: #219150;
+}
+
+.student-table {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.dashboard-filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-search {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.sort-dropdown {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+  background: white;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  font-weight: 600;
+  background: #ecf0f1;
+}
+
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f1f1f1;
+}
+
+.pass {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.fail {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.action-buttons .material-icons {
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+  color: #2c3e50;
+}
+
+.action-buttons .material-icons:hover {
+  transform: scale(1.2);
+  color: #2980b9;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.pagination-controls button {
+  padding: 8px 14px;
+  background: #3498db;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pagination-controls button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  color: #333;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.modal-buttons button {
+  margin: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-buttons .confirm {
+  background: #e74c3c;
+  color: white;
+}
+
+.modal-buttons .cancel {
+  background: #95a5a6;
+  color: white;
+} */
